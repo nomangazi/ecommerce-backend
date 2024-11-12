@@ -1,0 +1,55 @@
+{
+  "name": "country-info-json",
+  "version": "1.0.0",
+  "description": "country json api",
+  "main": "index.js",
+  "scripts": {
+    "start": "node dist/server.js",
+    "start:dev": "npx ts-node-dev --respawn --transpile-only src/server.ts",
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "npx eslint src --ignore-pattern .ts",
+    "lint:fix": "npx eslint src --fix",
+    "prettier": "prettier --ignore-path .gitignore --write \"./src/**/*.+(js|ts|json)\"",
+    "prettier:fix": "npx prettier --write src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nomangazi/ecommerce-backend.git"
+  },
+  "keywords": [
+    "country",
+    "api"
+  ],
+  "author": "Noman Gazi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nomangazi/ecommerce-backend/issues"
+  },
+  "homepage": "https://github.com/nomangazi/ecommerce-backend#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "drizzle-orm": "^0.33.0",
+    "eslint-plugin-drizzle": "^0.2.3",
+    "express": "^4.21.0",
+    "mysql2": "^3.11.3",
+    "nodemon": "^3.1.7",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.3.0",
+    "@types/cors": "^2.8.17",
+    "@types/eslint__js": "^8.42.3",
+    "@types/express": "^4.17.21",
+    "@types/node": "^22.5.5",
+    "drizzle-kit": "^0.24.2",
+    "eslint": "^8.57.1",
+    "globals": "^15.3.0",
+    "prettier": "^3.2.5",
+    "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.6.2",
+    "typescript-eslint": "^7.10.0"
+  }
+}
