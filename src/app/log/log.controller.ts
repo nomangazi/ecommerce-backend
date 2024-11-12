@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { NextFunction, Request, Response } from "express";
-import { ApiResSuccess } from "../../../utils/ApiResponse";
-import { log_request } from "../../../db/schema/log_request.schema";
-import { db } from "../../../db/db";
 import { eq } from "drizzle-orm";
+import { db } from "../../db/db";
+import { log_request } from "../../db/schema/log_request.schema";
+import { ApiResSuccess } from "../../utils/ApiResponse";
 
 const getLogInfo = async (req: Request, res: Response, next: NextFunction) => {
   try {

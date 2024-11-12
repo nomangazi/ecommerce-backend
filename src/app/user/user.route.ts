@@ -1,8 +1,8 @@
 import express from "express";
-import { countryController } from "./country.controller";
+import { userController } from "./user.controller";
 
-const countryRouter = express.Router();
+const userRouter = express.Router();
 
-countryRouter.get("/", countryController.getCountryInfo);
+userRouter.get("/", userController.getUserInfo);
 
-export default countryRouter;
+export default userRouter;
