@@ -17,7 +17,7 @@ COPY . .
 RUN yarn build
 
 # Expose the port the app runs on 5050
-EXPOSE 5050
+EXPOSE 5051
 
 # Run the application
 CMD ["yarn", "start"]
