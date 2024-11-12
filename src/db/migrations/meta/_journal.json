@@ -8,6 +8,13 @@
       "when": 1731428091499,
       "tag": "0000_initial migrate",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1731432496636,
+      "tag": "0001_added address column on user table",
+      "breakpoints": true
     }
   ]
 }

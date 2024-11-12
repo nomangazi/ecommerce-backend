@@ -1,4 +1,4 @@
-import { int, mysqlTable, varchar } from "drizzle-orm/mysql-core";
+import { int, mysqlTable, text, varchar } from "drizzle-orm/mysql-core";
 import { getCurrentTimestamp } from "../../utils/time";
 
 export const user = mysqlTable("user", {
@@ -19,6 +19,7 @@ export const user = mysqlTable("user", {
   status: varchar("status", { length: 255, enum: ["active", "inactive", "pending", "suspend", "dominate", "deleted"] })
     .default("active")
     .notNull(),
+  address: text("address").notNull(),
   ipInfo: varchar("ipInfo", { length: 255 }).notNull(),
   creator: int("creator").default(0).notNull(),
   createdAt: int("createdAt").default(getCurrentTimestamp()).notNull(),
