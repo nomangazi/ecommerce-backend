@@ -4,10 +4,11 @@ import express, { json, NextFunction, Request, Response, urlencoded } from "expr
 import cors from "cors";
 import { errorHandler } from "./middleware/error";
 import { notFound } from "./middleware/not-found";
-import { db } from "./db/db";
-import { log_request } from "./db/schema/log_request.schema";
+// import { db } from "./db/db";
+// import { log_request } from "./db/schema/log_request.schema";
 import logRouter from "./app/log/log.route";
 import userRouter from "./app/user/user.route";
+import { fileRouter } from "./app/file/file.route";
 
 const app = express();
 app.use(urlencoded({ extended: true }));
@@ -16,12 +17,12 @@ app.use(cors());
 
 const logRequest = async (req: Request, res: Response, next: NextFunction) => {
   if (req.url !== "/" && req.url !== "/api/v1/log") {
-    await db.insert(log_request).values({
-      hostname: req.hostname,
-      method: req.method,
-      url: req.url,
-      ip: req.ip,
-    });
+    // await db.insert(log_request).values({
+    //   hostname: req.hostname,
+    //   method: req.method,
+    //   url: req.url,
+    //   ip: req.ip,
+    // });
   }
 
   next();
@@ -31,6 +32,9 @@ app.use(logRequest);
 
 app.use("/api/v1/user", logRequest, userRouter);
 app.use("/api/v1/log", logRequest, logRouter);
+
+// handling all type file upload
+app.use("/api/v1/upload", logRequest, fileRouter);
 
 // 404 route not found
 app.use(notFound);
